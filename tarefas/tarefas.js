@@ -20,7 +20,7 @@ $(document).ready(function() {
 				$('#id-projeto').val(response[0].id_projeto);
 				$('#requisito').val(response[0].requisito);
 				$('#descricao').val(response[0].descricao);
-				$('#prioridade').val(response[0].prioridade);
+				//$('#prioridade').val(response[0].prioridade);
 				table.ajax.reload();
 			},
 			error: function() {
@@ -54,8 +54,8 @@ $(document).ready(function() {
 		if (id_projeto  == null ||  id_projeto.trim() === '' ||
     		 id_task    == null || id_task.trim() === ''     ||
     		 requisito  == null ||  requisito.trim() === ''  ||
-     		 descricao  == null || descricao.trim() === ''   ||
-    		 prioridade == null || prioridade.trim() === '') {
+    		 //prioridade == null || prioridade.trim() === ''  ||
+     		 descricao  == null || descricao.trim() === '') {
 				Swal.fire({
 					title: 'Por favor, preencha todos os campos',
 					icon: 'warning'
@@ -66,7 +66,8 @@ $(document).ready(function() {
 				$.ajax({
 					type: 'POST',
 					url: './create_task.php',
-					data: {id_projeto: id_projeto.value, requisito: requisito.value, descricao: descricao.value, prioridade: prioridade.value},
+					// data: {id_projeto: id_projeto.value, requisito: requisito.value, descricao: descricao.value, prioridade: prioridade.value},
+					data: {id_projeto: id_projeto.value, requisito: requisito.value, descricao: descricao.value},
 					success: function() {
 						window.location.href = './tarefas.html?id=' + id_projeto.value;
 					},
@@ -81,7 +82,8 @@ $(document).ready(function() {
 				$.ajax({
 					type: 'POST',
 					url: './put_tarefa.php',
-					data: {id_projeto: id_projeto, id_tarefa: id_task, requisito: requisito, descricao: descricao, prioridade: prioridade},
+					// data: {id_projeto: id_projeto, id_tarefa: id_task, requisito: requisito, descricao: descricao, prioridade: prioridade},
+					data: {id_projeto: id_projeto, id_tarefa: id_task, requisito: requisito, descricao: descricao},
 					success: function() {
 						console.log("sucesso");
 						Swal.fire({
@@ -91,7 +93,7 @@ $(document).ready(function() {
 						$('#id-tarefa').val('');
 						$('#requisito').val('');
 						$('#descricao').val('');
-						$('#prioridade').val('');
+						// $('#prioridade').val('');
 						table.ajax.reload();
 					},
 					error: function() {
@@ -136,12 +138,12 @@ $(document).ready(function() {
 		let id_task = $(this).data('id-tarefa');
 		let req = $(this).data('id-requisito');
 		let desc = $(this).data('id-descricao');
-		let pri = $(this).data('id-grau-prioridade');
+		// let pri = $(this).data('id-grau-prioridade');
 		$('#id-projeto').val(id_pro)
 		$('#id-tarefa').val(id_task)
 		$('#requisito').val(req)
 		$('#descricao').val(desc)
-		$('#prioridade').val(pri)
+		// $('#prioridade').val(pri)
 
 	  });
 	  
@@ -190,6 +192,7 @@ $(document).ready(function() {
 				}
 			},
 			{
+				visible: false,
 				targets: 4,
 				render: function (data, type, full, meta) {
 					return formatColumnText(full['grau_prioridade']);
