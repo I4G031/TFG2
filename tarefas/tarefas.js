@@ -48,13 +48,13 @@ $(document).ready(function() {
 		var id_task    = $('#id-tarefa').val();
 		var requisito  = $('#requisito').val();
 		var descricao  = $('#descricao').val();
-		var prioridade = $('#prioridade').val();
+		// var prioridade = $('#prioridade').val();
 
 		// verifica se todos os campos foram preenchidos
 		if (id_projeto  == null ||  id_projeto.trim() === '' ||
-    		 id_task    == null || id_task.trim() === ''     ||
+    		//  id_task    == null || id_task.trim() === ''     ||
     		 requisito  == null ||  requisito.trim() === ''  ||
-    		 //prioridade == null || prioridade.trim() === ''  ||
+    		//  prioridade == null || prioridade.trim() === ''  ||
      		 descricao  == null || descricao.trim() === '') {
 				Swal.fire({
 					title: 'Por favor, preencha todos os campos',

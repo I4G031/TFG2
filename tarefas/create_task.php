@@ -11,10 +11,11 @@ if ($conn->connect_error) {
 $id_projeto = $_POST["id_projeto"];
 $requisito  = $_POST["requisito"];
 $descricao  = $_POST["descricao"];
-$prioridade = $_POST["prioridade"];
+// $prioridade = $_POST["prioridade"];
 
 // inserir os dados no banco de dados
-$sql = "INSERT INTO tb_requisitos (id_projeto, nome, descricao, grau_prioridade) VALUES ('$id_projeto', '$requisito', '$descricao', '$prioridade')";
+// $sql = "INSERT INTO tb_requisitos (id_projeto, nome, descricao, grau_prioridade) VALUES ('$id_projeto', '$requisito', '$descricao', '$prioridade')";
+$sql = "INSERT INTO tb_requisitos (id_projeto, nome, descricao) VALUES ('$id_projeto', '$requisito', '$descricao')";
 if ($conn->query($sql) === TRUE) {
     echo "Tarefa cadastrada com sucesso!";
 } else {
