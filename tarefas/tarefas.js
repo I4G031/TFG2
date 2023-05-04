@@ -20,7 +20,7 @@ $(document).ready(function() {
 				$('#id-projeto').val(response[0].id_projeto);
 				$('#requisito').val(response[0].requisito);
 				$('#descricao').val(response[0].descricao);
-				//$('#prioridade').val(response[0].prioridade);
+				$('#prioridade').val(response[0].prioridade);
 				table.ajax.reload();
 			},
 			error: function() {
@@ -48,14 +48,18 @@ $(document).ready(function() {
 		var id_task    = $('#id-tarefa').val();
 		var requisito  = $('#requisito').val();
 		var descricao  = $('#descricao').val();
-		// var prioridade = $('#prioridade').val();
+		//var prioridade = $('#prioridade').val();
 
 		// verifica se todos os campos foram preenchidos
 		if (id_projeto  == null ||  id_projeto.trim() === '' ||
-    		//  id_task    == null || id_task.trim() === ''     ||
+    		// id_task    == null || id_task.trim() === ''     ||
     		 requisito  == null ||  requisito.trim() === ''  ||
-    		//  prioridade == null || prioridade.trim() === ''  ||
+    		 //prioridade == null || prioridade.trim() === ''  ||
      		 descricao  == null || descricao.trim() === '') {
+				console.log("id_projeto:", id_projeto);
+				console.log("id_task:", id_task);
+				console.log("requisito:", requisito);
+				console.log("id_descricao:", descricao);
 				Swal.fire({
 					title: 'Por favor, preencha todos os campos',
 					icon: 'warning'
@@ -67,9 +71,9 @@ $(document).ready(function() {
 					type: 'POST',
 					url: './create_task.php',
 					// data: {id_projeto: id_projeto.value, requisito: requisito.value, descricao: descricao.value, prioridade: prioridade.value},
-					data: {id_projeto: id_projeto.value, requisito: requisito.value, descricao: descricao.value},
+					data: {id_projeto: id_projeto, requisito: requisito, descricao: descricao},
 					success: function() {
-						window.location.href = './tarefas.html?id=' + id_projeto.value;
+						window.location.href = './tarefas.html?id=' + id_projeto;
 					},
 					error: function() {
 						Swal.fire({
@@ -78,6 +82,10 @@ $(document).ready(function() {
 						});
 					}
 				});
+		        console.log("id_projeto:", id_projeto);
+			    console.log("id_task:", id_task);
+			    console.log("requisito:", requisito);
+			    console.log("id_descricao:", descricao);
 			}else{
 				$.ajax({
 					type: 'POST',
