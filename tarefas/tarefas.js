@@ -44,7 +44,7 @@ $(document).ready(function() {
 	$('#btn-continue').on('click', function(event){
 		event.preventDefault();
 
-		window.location.href = '../tecnica/tecnica.html?id=' + id_projeto.value;
+		window.location.href = '../tecnica/tecnica.html?id=' + $('#id-projeto').val();
 
 	});
 
@@ -164,7 +164,7 @@ $(document).ready(function() {
 	  });
 	  
 
-	var initLoad = true;
+	var initLoad = false;
 	
 	var table = $('#list-table').DataTable({
 		ajax: {

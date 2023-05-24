@@ -40,6 +40,10 @@ $(document).ready(function() {
 		window.location.href = './tarefas.html?id=' + id_projeto;
 	});
 
+	$('#btn-ordenar').on('click', function(){
+		//window.location.href = './tarefas.html?id=' + id_projeto;
+	});
+
 	// Enviar o formulário quando o botão for clicado
 	$('#btn-save').on('click', function(event) {
 		event.preventDefault();
@@ -164,6 +168,7 @@ $(document).ready(function() {
 			{ data: 'descricao' },
 			{ data: 'grau_prioridade' },
 			{ data: 'id_projeto' },
+			{ data: '' },
 			{ data: '' }
 		],
 		columnDefs: [
@@ -209,6 +214,32 @@ $(document).ready(function() {
 				targets: 6,
 				render: function (data, type, full, meta) {
 					return '<button class="btn btn-success btn-edit" data-id-tarefa="' + full.id + '"  data-id-requisito="' + full.nome + '" data-id-descricao="' + full.descricao + '"  data-id-grau-prioridade="' + full.grau_prioridade + '"  data-id-projeto="' + id_projeto + '">Edit</button><button class="btn btn-danger btn-del" data-id-tarefa="' + full.id + '" data-id-projeto="' + id_projeto + '">Del</button>';
+				}
+			},
+			{
+				targets: 7,
+				render: function (data, type, full, meta) {
+					return '  <select class="form-select" data-id-moscow="'+full.id+'" id="prioridade_moscow" name="prioridade" aria-label="Prioridade">'+
+					'<option selected disabled></option>'+
+					'<option value="1">Must Have</option>'+
+					'<option value="2">Pouco Grave</option>'+
+					'<option value="3">Grave</option>'+
+					'<option value="4">Muito Grave</option>'+
+					'<option value="5">Extremamente Grave</option>'+
+				'</select>';
+				}
+			},
+			{
+				targets: 8,
+				render: function (data, type, full, meta) {
+					return '  <select class="form-select" data-id-gut="'+full.id+'" id="prioridade_gut" name="prioridade_gut" aria-label="Prioridade">'+
+					'<option selected disabled></option>'+
+					'<option value="1">Sem Gravidade</option>'+
+					'<option value="2">Pouco Grave</option>'+
+					'<option value="3">Grave</option>'+
+					'<option value="4">Muito Grave</option>'+
+					'<option value="5">Extremamente Grave</option>'+
+				'</select>';
 				}
 			}
 		],
