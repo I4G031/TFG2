@@ -222,10 +222,9 @@ $(document).ready(function() {
 					return '  <select class="form-select" data-id-moscow="'+full.id+'" id="prioridade_moscow" name="prioridade" aria-label="Prioridade">'+
 					'<option selected disabled></option>'+
 					'<option value="1">Must Have</option>'+
-					'<option value="2">Pouco Grave</option>'+
-					'<option value="3">Grave</option>'+
-					'<option value="4">Muito Grave</option>'+
-					'<option value="5">Extremamente Grave</option>'+
+					'<option value="2">Should have</option>'+
+					'<option value="3">Could have</option>'+
+					'<option value="4">Wont Grave</option>'+
 				'</select>';
 				}
 			},
