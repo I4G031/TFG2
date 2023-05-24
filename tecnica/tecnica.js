@@ -41,8 +41,16 @@ $(document).ready(function() {
 	});
 
 	$('#btn-ordenar').on('click', function(){
-		//window.location.href = './tarefas.html?id=' + id_projeto;
-	});
+		var tableData = $('#list-table').DataTable().rows().data();
+
+		// Faça algo com os dados aqui
+		console.log(tableData); // Exemplo: exibir os dados no console
+		for (var i = 0; i <tableData.length; i++) {
+			console.log(tableData[i]);
+			console.log($('#data-id-moscow').val());
+		  }
+
+ 	 });
 
 	// Enviar o formulário quando o botão for clicado
 	$('#btn-save').on('click', function(event) {
@@ -219,7 +227,7 @@ $(document).ready(function() {
 			{
 				targets: 7,
 				render: function (data, type, full, meta) {
-					return '  <select class="form-select" data-id-moscow="'+full.id+'" id="prioridade_moscow" name="prioridade" aria-label="Prioridade">'+
+					return '  <select class="form-select" data-id-moscow="'+full.id+'" id="prioridade_moscow" name="prioridade_moscow" aria-label="Prioridade">'+
 					'<option selected disabled></option>'+
 					'<option value="1">Must Have</option>'+
 					'<option value="2">Should have</option>'+
