@@ -12,7 +12,7 @@ $(document).ready(function() {
 	if(id_tarefa != null){
 		$.ajax({
 			type: 'GET',
-			url: './get_tarefa_by_id.php?id='+id_projeto+'&id_tarefa='+id_tarefa,
+			url: '../funcoes/get_tarefa_by_id.php?id='+id_projeto+'&id_tarefa='+id_tarefa,
 			data: null,
 			success: function(response) {
 				var response = JSON.parse(response);
@@ -38,6 +38,14 @@ $(document).ready(function() {
 
 	$('#btn-clear').on('click', function(){
 		window.location.href = './tarefas.html?id=' + id_projeto;
+	});
+
+	// Continuar para tela de tecnicas
+	$('#btn-continue').on('click', function(event){
+		event.preventDefault();
+
+		window.location.href = '../tecnica/tecnica.html?id=' + id_projeto.value;
+
 	});
 
 	// Enviar o formulário quando o botão for clicado
@@ -69,7 +77,7 @@ $(document).ready(function() {
 				console.log('O valor dentro do if é: ', $('#id-tarefa').val());
 				$.ajax({
 					type: 'POST',
-					url: './create_task.php',
+					url: '../funcoes/create_task.php',
 					// data: {id_projeto: id_projeto.value, requisito: requisito.value, descricao: descricao.value, prioridade: prioridade.value},
 					data: {id_projeto: id_projeto, requisito: requisito, descricao: descricao},
 					success: function() {
@@ -89,7 +97,7 @@ $(document).ready(function() {
 			}else{
 				$.ajax({
 					type: 'POST',
-					url: './put_tarefa.php',
+					url: '../funcoes/put_tarefa.php',
 					// data: {id_projeto: id_projeto, id_tarefa: id_task, requisito: requisito, descricao: descricao, prioridade: prioridade},
 					data: {id_projeto: id_projeto, id_tarefa: id_task, requisito: requisito, descricao: descricao},
 					success: function() {
@@ -124,7 +132,7 @@ $(document).ready(function() {
 		console.log('id_tarefa: ',id_task);
 		$.ajax({
 		  type: 'POST',
-		  url: './del_tarefa.php',
+		  url: '../funcoes/del_tarefa.php',
 		  data: { id_projeto: id_pro,id_tarefa:id_task},
 		  success: function() {
 			table.ajax.reload();
@@ -160,7 +168,7 @@ $(document).ready(function() {
 	
 	var table = $('#list-table').DataTable({
 		ajax: {
-			url: './get_requisitos.php?id='+id_projeto,
+			url: '../funcoes/get_requisitos.php?id='+id_projeto,
 			type: 'GET',
 			dataSrc: ''
 		},
