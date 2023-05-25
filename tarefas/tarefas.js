@@ -164,7 +164,7 @@ $(document).ready(function() {
 	  });
 	  
 
-	var initLoad = false;
+	var initLoad = true;
 	
 	var table = $('#list-table').DataTable({
 		ajax: {

@@ -219,6 +219,7 @@ $(document).ready(function() {
 				}
 			},	
 			{
+				visible:false,
 				targets: 6,
 				render: function (data, type, full, meta) {
 					return '<button class="btn btn-success btn-edit" data-id-tarefa="' + full.id + '"  data-id-requisito="' + full.nome + '" data-id-descricao="' + full.descricao + '"  data-id-grau-prioridade="' + full.grau_prioridade + '"  data-id-projeto="' + id_projeto + '">Edit</button><button class="btn btn-danger btn-del" data-id-tarefa="' + full.id + '" data-id-projeto="' + id_projeto + '">Del</button>';
@@ -237,6 +238,7 @@ $(document).ready(function() {
 				}
 			},
 			{
+				visible:false,
 				targets: 8,
 				render: function (data, type, full, meta) {
 					return '  <select class="form-select" data-id-gut="'+full.id+'" id="prioridade_gut" name="prioridade_gut" aria-label="Prioridade">'+
