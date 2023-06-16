@@ -1,6 +1,6 @@
 <?php
 // conexão com o banco de dados
-$conn = new mysqli("localhost", "root", "", "db_projeto");
+$conn = new mysqli("localhost", "root", "root", "db_projeto");
 
 // verificação da conexão
 if ($conn->connect_error) {
