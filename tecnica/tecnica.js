@@ -40,17 +40,41 @@ $(document).ready(function() {
 		window.location.href = './tarefas.html?id=' + id_projeto;
 	});
 
-	$('#btn-ordenar').on('click', function(){
-		var tableData = $('#list-table').DataTable().rows().data();
+	$('#btn-ordenar').on('click', function() {
+		var table = $('#list-table').DataTable();
+		var rows = table.rows().nodes();
+		var i = 0;
+		var vetorIds = [];
+		var vetorMoscow = [];
 
-		// Faça algo com os dados aqui
-		console.log(tableData); // Exemplo: exibir os dados no console
-		for (var i = 0; i <tableData.length; i++) {
-			console.log(tableData[i]);
-			console.log($('#data-id-moscow').val());
-		  }
+		rows.each(function() {
+			var row = $(this);
+			var idCell = $(row).find('td:first');
 
- 	 });
+			var idString = idCell[i].innerHTML;
+			vetorIds.push(idString);
+			
+			var selects = row.find('select');
+			selects.each(function() {
+				var select = $(this);
+				var selectedValue = select.val();
+				if(i == idCell.length -1)
+					vetorMoscow.push(selectedValue);
+			});
+			
+			i = i + 1;
+		});
+		for (var i = 0; i < vetorIds.length; i++) {
+			console.log("vetorIds["+i+"]: ", vetorIds[i]);
+		}
+		for (var i = 0; i < vetorMoscow.length; i++) {
+			console.log("vetorMoscow["+i+"]: ", vetorMoscow[i]);
+		}
+	});
+	
+	
+	
+
 
 	// Enviar o formulário quando o botão for clicado
 	$('#btn-save').on('click', function(event) {
@@ -219,10 +243,16 @@ $(document).ready(function() {
 				}
 			},	
 			{
-				visible:false,
 				targets: 6,
+				visible: false,
 				render: function (data, type, full, meta) {
-					return '<button class="btn btn-success btn-edit" data-id-tarefa="' + full.id + '"  data-id-requisito="' + full.nome + '" data-id-descricao="' + full.descricao + '"  data-id-grau-prioridade="' + full.grau_prioridade + '"  data-id-projeto="' + id_projeto + '">Edit</button><button class="btn btn-danger btn-del" data-id-tarefa="' + full.id + '" data-id-projeto="' + id_projeto + '">Del</button>';
+					return '  <select class="form-select" data-id-gut="'+full.id+'" id="prioridade_gut" name="prioridade_gut" aria-label="Prioridade">'+
+					'<option selected disabled></option>'+
+					'<option value="1">Must Have</option>'+
+					'<option value="2">Should have</option>'+
+					'<option value="3">Could have</option>'+
+					'<option value="4">Wont Grave</option>'+
+				'</select>';
 				}
 			},
 			{
