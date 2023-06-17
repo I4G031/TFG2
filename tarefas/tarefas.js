@@ -58,27 +58,18 @@ $(document).ready(function() {
 		var descricao  = $('#descricao').val();
 		//var prioridade = $('#prioridade').val();
 
-		// verifica se todos os campos foram preenchidos
 		if (id_projeto  == null ||  id_projeto.trim() === '' ||
-    		// id_task    == null || id_task.trim() === ''     ||
     		 requisito  == null ||  requisito.trim() === ''  ||
-    		 //prioridade == null || prioridade.trim() === ''  ||
      		 descricao  == null || descricao.trim() === '') {
-				console.log("id_projeto:", id_projeto);
-				console.log("id_task:", id_task);
-				console.log("requisito:", requisito);
-				console.log("id_descricao:", descricao);
 				Swal.fire({
 					title: 'Por favor, preencha todos os campos',
 					icon: 'warning'
 				});
 		}else{
 			if($('#id-tarefa').val() == null ||$('#id-tarefa').val() == ''){
-				console.log('O valor dentro do if é: ', $('#id-tarefa').val());
 				$.ajax({
 					type: 'POST',
 					url: '../funcoes/create_task.php',
-					// data: {id_projeto: id_projeto.value, requisito: requisito.value, descricao: descricao.value, prioridade: prioridade.value},
 					data: {id_projeto: id_projeto, requisito: requisito, descricao: descricao},
 					success: function() {
 						window.location.href = './tarefas.html?id=' + id_projeto;
@@ -90,10 +81,6 @@ $(document).ready(function() {
 						});
 					}
 				});
-		        console.log("id_projeto:", id_projeto);
-			    console.log("id_task:", id_task);
-			    console.log("requisito:", requisito);
-			    console.log("id_descricao:", descricao);
 			}else{
 				$.ajax({
 					type: 'POST',
@@ -101,9 +88,8 @@ $(document).ready(function() {
 					// data: {id_projeto: id_projeto, id_tarefa: id_task, requisito: requisito, descricao: descricao, prioridade: prioridade},
 					data: {id_projeto: id_projeto, id_tarefa: id_task, requisito: requisito, descricao: descricao},
 					success: function() {
-						console.log("sucesso");
 						Swal.fire({
-							title: 'Tarefa cadastrada com sucesso!',
+							title: 'Requisito atualizado com sucesso!',
 							icon: 'success'
 						});
 						$('#id-tarefa').val('');
@@ -113,7 +99,6 @@ $(document).ready(function() {
 						table.ajax.reload();
 					},
 					error: function() {
-						console.log("erro");
 						Swal.fire({
 							title: 'Erro ao cadastrar a tarefa',
 							icon: 'error'

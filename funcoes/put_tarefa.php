@@ -12,10 +12,9 @@ $id_tarefa  = $_POST["id_tarefa"];
 $id_projeto = $_POST["id_projeto"];
 $requisito  = $_POST["requisito"];
 $descricao  = $_POST["descricao"];
-$prioridade = $_POST["prioridade"];
 
 // atualizar os dados da tarefa no banco de dados
-$sql = "UPDATE tb_requisitos SET nome = '$requisito', descricao = '$descricao', grau_prioridade = '$prioridade' WHERE id_projeto = '$id_projeto' AND id = '$id_tarefa'";
+$sql = "UPDATE tb_requisitos SET nome = '$requisito', descricao = '$descricao' WHERE id_projeto = '$id_projeto' AND id = '$id_tarefa'";
 
 if ($conn->query($sql) === TRUE) {
     echo "Tarefa atualizada com sucesso!";
