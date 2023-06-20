@@ -194,9 +194,8 @@ $(document).ready(function() {
                             '<option selected disabled></option>' +
                             '<option value="1">Must Have</option>' +
                             '<option value="2">Should have</option>' +
-                            '<option value="3">Could have</option>' +
-                            '<option value="4">Wont Grave</option>' +
-                            '<option value="5">Wont Grave</option>' +
+                            '<option value="3">Could Have</option>' +
+                            '<option value="4">Wont Have</option>' +
                             '</select>';
                     }
                 },
@@ -206,11 +205,11 @@ $(document).ready(function() {
                     render: function(data, type, full, meta) {
                         return '  <select class="form-select" data-id-moscow="' + full.prioridade_moscow + '" id="prioridade_moscow" name="prioridade_moscow" aria-label="Prioridade">' +
                             '<option selected></option>' +
-                            '<option value="1">G1</option>' +
-                            '<option value="2">G2</option>' +
-                            '<option value="3">G3</option>' +
-                            '<option value="4">G4</option>' +
-                            '<option value="5">G5</option>' +
+                            '<option value="1">Sem Gravidade</option>' +
+                            '<option value="2">Pouco Grave</option>' +
+                            '<option value="3">Grave</option>' +
+                            '<option value="4">Muito Grave</option>' +
+                            '<option value="5">Extrematente Grave</option>' +
                             '</select>';
                     }
                 },
@@ -220,11 +219,11 @@ $(document).ready(function() {
                     render: function(data, type, full, meta) {
                         return '  <select class="form-select" data-id-moscow="' + full.prioridade_moscow + '" id="prioridade_moscow" name="prioridade_moscow" aria-label="Prioridade">' +
                             '<option selected></option>' +
-                            '<option value="1">U1</option>' +
-                            '<option value="2">U2</option>' +
-                            '<option value="3">U3</option>' +
-                            '<option value="4">U4</option>' +
-                            '<option value="5">U5</option>' +
+                            '<option value="1">Sem Pressa Alguma</option>' +
+                            '<option value="2">Pode Aguardar</option>' +
+                            '<option value="3">Agir o Quanto Antes</option>' +
+                            '<option value="4">Agir com Alguma Urgência</option>' +
+                            '<option value="5">Agir Imediantamente</option>' +
                             '</select>';
                     }
                 },
@@ -234,11 +233,11 @@ $(document).ready(function() {
                     render: function(data, type, full, meta) {
                         return '  <select class="form-select" data-id-moscow="' + full.prioridade_moscow + '" id="prioridade_moscow" name="prioridade_moscow" aria-label="Prioridade">' +
                             '<option selected></option>' +
-                            '<option value="1">T1</option>' +
-                            '<option value="2">T2</option>' +
-                            '<option value="3">T3</option>' +
-                            '<option value="4">T4</option>' +
-                            '<option value="5">T5</option>' +
+                            '<option value="1">Não Vai Agravar, Pode Até Melhorar</option>' +
+                            '<option value="2">Vai Agravar No longo do Prazo</option>' +
+                            '<option value="3">Vai Agravar No Médio do Prazo</option>' +
+                            '<option value="4">Vai Agravar em Pouco Tempo</option>' +
+                            '<option value="5">Vai Agravar Rapidamente</option>' +
                             '</select>';
                     }
                 },
@@ -371,43 +370,43 @@ $(document).ready(function() {
                                 render: function(data, type, full, meta) {
                                     if (full['prioridade_gravidade'] == 1) {
                                         return '  <select class="form-select" data-id-gut-gravidade="' + full['prioridade_gravidade'] + '" name="prioridade_gut" aria-label="Prioridade">' +
-                                            '<option selected value="1">G1</option>' +
-                                            '<option value="2">G2</option>' +
-                                            '<option value="3">G3</option>' +
-                                            '<option value="4">G4</option>' +
-                                            '<option value="5">G5</option>' +
+                                            '<option selected value="1">Sem Gravidade</option>' +
+                                            '<option value="2">Pouco Grave</option>' +
+                                            '<option value="3">Grave</option>' +
+                                            '<option value="4">Muito Grave</option>' +
+                                            '<option value="5">Extrematente Grave</option>' +
                                             '</select>';
                                     } else if (full['prioridade_gravidade'] == 2) {
                                         return '  <select class="form-select" data-id-gut-gravidade="' + full['prioridade_gravidade'] + '" name="prioridade_gut" aria-label="Prioridade">' +
-                                            '<option value="1">G1</option>' +
-                                            '<option selected value="2">G2</option>' +
-                                            '<option value="3">G3</option>' +
-                                            '<option value="4">G4</option>' +
-                                            '<option value="5">G5</option>' +
+                                            '<option value="1">Sem Gravidade</option>' +
+                                            '<option selected value="2">Pouco Grave</option>' +
+                                            '<option value="3">Grave</option>' +
+                                            '<option value="4">Muito Grave</option>' +
+                                            '<option value="5">Extrematente Grave</option>' +
                                             '</select>';
                                     } else if (full['prioridade_gravidade'] == 3) {
                                         return '  <select class="form-select" data-id-gut-gravidade="' + full['prioridade_gravidade'] + '" name="prioridade_gut" aria-label="Prioridade">' +
-                                            '<option value="1">G1</option>' +
-                                            '<option value="2">G2</option>' +
-                                            '<option selected value="3">G3</option>' +
-                                            '<option value="4">G4</option>' +
-                                            '<option value="5">G5</option>' +
+                                            '<option value="1">Sem Gravidade</option>' +
+                                            '<option value="2">Pouco Grave</option>' +
+                                            '<option selected value="3">Grave</option>' +
+                                            '<option value="4">Muito Grave</option>' +
+                                            '<option value="5">Extrematente Grave</option>' +
                                             '</select>';
                                     } else if (full['prioridade_gravidade'] == 4) {
                                         return '  <select class="form-select" data-id-gut-gravidade="' + full['prioridade_gravidade'] + '" name="prioridade_gut" aria-label="Prioridade">' +
-                                            '<option value="1">G1</option>' +
-                                            '<option value="2">G2</option>' +
-                                            '<option value="3">G3</option>' +
-                                            '<option selected value="4">G4</option>' +
-                                            '<option value="5">G5</option>' +
+                                            '<option value="1">Sem Gravidade</option>' +
+                                            '<option value="2">Pouco Grave</option>' +
+                                            '<option value="3">Grave</option>' +
+                                            '<option selected value="4">Muito Grave</option>' +
+                                            '<option value="5">Extrematente Grave</option>' +
                                             '</select>';
                                     } else if (full['prioridade_gravidade'] == 5) {
                                         return '  <select class="form-select" data-id-gut-gravidade="' + full['prioridade_gravidade'] + '" name="prioridade_gut" aria-label="Prioridade">' +
-                                            '<option value="1">G1</option>' +
-                                            '<option value="2">G2</option>' +
-                                            '<option value="3">G3</option>' +
-                                            '<option value="4">G4</option>' +
-                                            '<option selected value="5">G5</option>' +
+                                            '<option value="1">Sem Gravidade</option>' +
+                                            '<option value="2">Pouco Grave</option>' +
+                                            '<option value="3">Grave</option>' +
+                                            '<option value="4">Muito Grave</option>' +
+                                            '<option selected value="5">Extrematente Grave</option>' +
                                             '</select>';
                                     }
                                 }
@@ -418,43 +417,43 @@ $(document).ready(function() {
                                 render: function(data, type, full, meta) {
                                     if (full['prioridade_urgencia'] == 1) {
                                         return '  <select class="form-select" data-id-gut-urgencia="' + full['prioridade_urgencia'] + '" name="prioridade_gut" aria-label="Prioridade">' +
-                                            '<option selected value="1">U1</option>' +
-                                            '<option value="2">U2</option>' +
-                                            '<option value="3">U3</option>' +
-                                            '<option value="4">U4</option>' +
-                                            '<option value="5">U5</option>' +
+                                            '<option selected value="1">Sem Pressa Alguma</option>' +
+                                            '<option value="2">Pode Aguardar</option>' +
+                                            '<option value="3">Agir o Quanto Antes</option>' +
+                                            '<option value="4">Agir com Alguma Urgência</option>' +
+                                            '<option value="5">Agir Imediantamente</option>' +
                                             '</select>';
                                     } else if (full['prioridade_urgencia'] == 2) {
                                         return '  <select class="form-select" data-id-gut-urgencia="' + full['prioridade_urgencia'] + '" name="prioridade_gut" aria-label="Prioridade">' +
-                                            '<option value="1">U1</option>' +
-                                            '<option selected value="2">U2</option>' +
-                                            '<option value="3">U3</option>' +
-                                            '<option value="4">U4</option>' +
+                                            '<option value="1">Sem Pressa Alguma</option>' +
+                                            '<option selected value="2">Pode Aguardar</option>' +
+                                            '<option value="3">Agir o Quanto Antes</option>' +
+                                            '<option value="4">Agir com Alguma Urgência</option>' +
                                             '<option value="5">U5</option>' +
                                             '</select>';
                                     } else if (full['prioridade_urgencia'] == 3) {
                                         return '  <select class="form-select" data-id-gut-urgencia="' + full['prioridade_urgencia'] + '" name="prioridade_gut" aria-label="Prioridade">' +
-                                            '<option value="1">U1</option>' +
-                                            '<option value="2">U2</option>' +
-                                            '<option selected value="3">U3</option>' +
-                                            '<option value="4">U4</option>' +
-                                            '<option value="5">U5</option>' +
+                                            '<option value="1">Sem Pressa Alguma</option>' +
+                                            '<option value="2">Pode Aguardar</option>' +
+                                            '<option selected value="3">Agir o Quanto Antes</option>' +
+                                            '<option value="4">Agir com Alguma Urgência</option>' +
+                                            '<option value="5">Agir Imediantamente</option>' +
                                             '</select>';
                                     } else if (full['prioridade_urgencia'] == 4) {
                                         return '  <select class="form-select" data-id-gut-urgencia="' + full['prioridade_urgencia'] + '" name="prioridade_gut" aria-label="Prioridade">' +
-                                            '<option value="1">U1</option>' +
-                                            '<option value="2">U2</option>' +
-                                            '<option value="3">U3</option>' +
-                                            '<option selected value="4">U4</option>' +
-                                            '<option value="5">U5</option>' +
+                                            '<option value="1">Sem Pressa Alguma</option>' +
+                                            '<option value="2">Pode Aguardar</option>' +
+                                            '<option value="3">Agir o Quanto Antes</option>' +
+                                            '<option selected value="4">Agir com Alguma Urgência</option>' +
+                                            '<option value="5">Agir Imediantamente</option>' +
                                             '</select>';
                                     } else if (full['prioridade_urgencia'] == 5) {
                                         return '  <select class="form-select" data-id-gut-urgencia="' + full['prioridade_urgencia'] + '" name="prioridade_gut" aria-label="Prioridade">' +
-                                            '<option value="1">U1</option>' +
-                                            '<option value="2">U2</option>' +
-                                            '<option value="3">U3</option>' +
-                                            '<option value="4">U4</option>' +
-                                            '<option selected value="5">U5</option>' +
+                                            '<option value="1">Sem Pressa Alguma</option>' +
+                                            '<option value="2">Pode Aguardar</option>' +
+                                            '<option value="3">Agir o Quanto Antes</option>' +
+                                            '<option value="4">Agir com Alguma Urgência</option>' +
+                                            '<option selected value="5">Agir Imediantamente</option>' +
                                             '</select>';
                                     }
                                 }
@@ -465,43 +464,43 @@ $(document).ready(function() {
                                 render: function(data, type, full, meta) {
                                     if (full['prioridade_tendencia'] == 1) {
                                         return '  <select class="form-select" data-id-gut-urgencia="' + full['prioridade_tendencia'] + '" name="prioridade_gut" aria-label="Prioridade">' +
-                                            '<option selected value="1">T1</option>' +
-                                            '<option value="2">T2</option>' +
-                                            '<option value="3">T3</option>' +
-                                            '<option value="4">T4</option>' +
-                                            '<option value="5">T5</option>' +
+                                            '<option selected value="1">Não Vai Agravar, Pode Até Melhorar</option>' +
+                                            '<option value="2">Vai Agravar No longo do Prazo</option>' +
+                                            '<option value="3">Vai Agravar No Médio do Prazo</option>' +
+                                            '<option value="4">Vai Agravar em Pouco Tempo</option>' +
+                                            '<option value="5">Vai Agravar Rapidamente</option>' +
                                             '</select>';
                                     } else if (full['prioridade_tendencia'] == 2) {
                                         return '  <select class="form-select" data-id-gut-urgencia="' + full['prioridade_tendencia'] + '" name="prioridade_gut" aria-label="Prioridade">' +
-                                            '<option value="1">T1</option>' +
-                                            '<option selected value="2">T2</option>' +
-                                            '<option value="3">T3</option>' +
-                                            '<option value="4">T4</option>' +
-                                            '<option value="5">T5</option>' +
+                                            '<option value="1">Não Vai Agravar, Pode Até Melhorar</option>' +
+                                            '<option selected value="2">Vai Agravar No longo do Prazo</option>' +
+                                            '<option value="3">Vai Agravar No Médio do Prazo</option>' +
+                                            '<option value="4">Vai Agravar em Pouco Tempo</option>' +
+                                            '<option value="5">Vai Agravar Rapidamente</option>' +
                                             '</select>';
                                     } else if (full['prioridade_tendencia'] == 3) {
                                         return '  <select class="form-select" data-id-gut-urgencia="' + full['prioridade_tendencia'] + '" name="prioridade_gut" aria-label="Prioridade">' +
-                                            '<option value="1">T1</option>' +
-                                            '<option value="2">T2</option>' +
-                                            '<option selected value="3">T3</option>' +
-                                            '<option value="4">T4</option>' +
-                                            '<option value="5">T5</option>' +
+                                            '<option value="1">Não Vai Agravar, Pode Até Melhorar</option>' +
+                                            '<option value="2">Vai Agravar No longo do Prazo</option>' +
+                                            '<option selected value="3">Vai Agravar No Médio do Prazo</option>' +
+                                            '<option value="4">Vai Agravar em Pouco Tempo</option>' +
+                                            '<option value="5">Vai Agravar Rapidamente</option>' +
                                             '</select>';
                                     } else if (full['prioridade_tendencia'] == 4) {
                                         return '  <select class="form-select" data-id-gut-urgencia="' + full['prioridade_tendencia'] + '" name="prioridade_gut" aria-label="Prioridade">' +
-                                            '<option value="1">T1</option>' +
-                                            '<option value="2">T2</option>' +
-                                            '<option value="3">T3</option>' +
-                                            '<option selected value="4">T4</option>' +
-                                            '<option value="5">T5</option>' +
+                                            '<option value="1">Não Vai Agravar, Pode Até Melhorar</option>' +
+                                            '<option value="2">Vai Agravar No longo do Prazo</option>' +
+                                            '<option value="3">Vai Agravar No Médio do Prazo</option>' +
+                                            '<option selected value="4">Vai Agravar em Pouco Tempo</option>' +
+                                            '<option value="5">Vai Agravar Rapidamente</option>' +
                                             '</select>';
                                     } else if (full['prioridade_tendencia'] == 5) {
                                         return '  <select class="form-select" data-id-gut-urgencia="' + full['prioridade_tendencia'] + '" name="prioridade_gut" aria-label="Prioridade">' +
-                                            '<option value="1">T1</option>' +
-                                            '<option value="2">T2</option>' +
-                                            '<option value="3">T3</option>' +
-                                            '<option value="4">T4</option>' +
-                                            '<option selected value="5">T5</option>' +
+                                            '<option value="1">Não Vai Agravar, Pode Até Melhorar</option>' +
+                                            '<option value="2">Vai Agravar No longo do Prazo</option>' +
+                                            '<option value="3">Vai Agravar No Médio do Prazo</option>' +
+                                            '<option value="4">Vai Agravar em Pouco Tempo</option>' +
+                                            '<option selected value="5">Vai Agravar Rapidamente</option>' +
                                             '</select>';
                                     }
                                 }
