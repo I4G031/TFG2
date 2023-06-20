@@ -208,7 +208,7 @@ $(document).ready(function() {
                     visible: true,
                     render: function(data, type, full, meta) {
                         return '  <select class="form-select" data-id-moscow="' + full.prioridade_moscow + '" id="prioridade_moscow" name="prioridade_moscow" aria-label="Prioridade">' +
-                            '<option selected></option>' +
+                            '<option selected>Selecionar a Prioridade</option>' +
                             '<option value="1">Sem Gravidade</option>' +
                             '<option value="2">Pouco Grave</option>' +
                             '<option value="3">Grave</option>' +
@@ -222,7 +222,7 @@ $(document).ready(function() {
                     visible: true,
                     render: function(data, type, full, meta) {
                         return '  <select class="form-select" data-id-moscow="' + full.prioridade_moscow + '" id="prioridade_moscow" name="prioridade_moscow" aria-label="Prioridade">' +
-                            '<option selected></option>' +
+                            '<option selected>Selecionar a Prioridade</option>' +
                             '<option value="1">Sem Pressa Alguma</option>' +
                             '<option value="2">Pode Aguardar</option>' +
                             '<option value="3">Agir o Quanto Antes</option>' +
@@ -236,7 +236,7 @@ $(document).ready(function() {
                     visible: true,
                     render: function(data, type, full, meta) {
                         return '  <select class="form-select" data-id-moscow="' + full.prioridade_moscow + '" id="prioridade_moscow" name="prioridade_moscow" aria-label="Prioridade">' +
-                            '<option selected></option>' +
+                            '<option selected>Selecionar a Prioridade</option>' +
                             '<option value="1">Não Vai Agravar, Pode Até Melhorar</option>' +
                             '<option value="2">Vai Agravar No longo do Prazo</option>' +
                             '<option value="3">Vai Agravar No Médio do Prazo</option>' +
@@ -322,7 +322,7 @@ $(document).ready(function() {
                                 title: 'Resultado Gut'
                             }
                         ],
-						order: [[6, 'desc']],
+						order: [[9, 'desc']],
 						visible: true,
                         columnDefs: [
 							{

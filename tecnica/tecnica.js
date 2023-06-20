@@ -267,7 +267,7 @@ $(document).ready(function() {
 					visible: false,
 					render: function (data, type, full, meta) {
 						return '  <select class="form-select" data-id-gut="'+full.id+'" id="prioridade_gut" name="prioridade_gut" aria-label="Prioridade">'+
-						'<option selected disabled></option>'+
+						'<option selected disabled>Selecionar Quadrante</option>'+
 						'<option value="1">Must Have</option>'+
 						'<option value="2">Should have</option>'+
 						'<option value="3">Could have</option>'+
@@ -310,7 +310,7 @@ $(document).ready(function() {
 						'</select>';
 						}else{
 							return '  <select class="form-select" data-id-moscow="'+full.prioridade_moscow+'" id="prioridade_moscow" name="prioridade_moscow" aria-label="Prioridade">'+
-							'<option selected disabled></option>'+
+							'<option selected disabled>Selecionar Quadrante</option>'+
 							'<option value="1">Must Have</option>'+
 							'<option value="2">Should have</option>'+
 							'<option value="3">Could have</option>'+
