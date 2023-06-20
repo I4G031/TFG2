@@ -36,6 +36,10 @@ $(document).ready(function() {
     $("#id-projeto").val(id_projeto);
     $("#id-tarefa").val(id_tarefa);
 
+    $('#btn-fim').on('click', function(){
+        window.location.href = '../index.html?id=' + id_projeto;
+    });
+
     $('#btn-clear').on('click', function() {
         window.location.href = './tarefas.html?id=' + id_projeto;
     });
@@ -287,11 +291,11 @@ $(document).ready(function() {
                             },
                             {
                                 data: 'descricao',
-                                title: 'Descrição'
+                                title: 'Requisito'
                             },
                             {
                                 data: 'id_projeto',
-                                title: 'ID Projeto'
+                                title: 'Descrição'
                             },
                             {
                                 data: 'prioridade_moscow',
@@ -300,10 +304,6 @@ $(document).ready(function() {
                             {
                                 data: 'prioridade_gut',
                                 title: 'Prioridade Moscow'
-                            },
-                            {
-                                data: 'prioridade_gravidade',
-                                title: 'Prioridade Gut'
                             },
                             {
                                 data: 'prioridade_urgencia',
@@ -316,6 +316,10 @@ $(document).ready(function() {
                             {
                                 data: 'tendencia',
                                 title: 'Prioridade Tendência'
+                            },
+                            {
+                                data: 'prioridade_gravidade',
+                                title: 'Resultado Gut'
                             }
                         ],
 						order: [[6, 'desc']],
@@ -354,18 +358,13 @@ $(document).ready(function() {
                             },
                             {
                                 targets: 5,
+								visible: false,
                                 render: function(data, type, full, meta) {
                                     return formatColumnText(full['prioridade_moscow']);
                                 }
                             },
                             {
-                                targets: 6,
-                                render: function(data, type, full, meta) {
-                                    return formatColumnText(full['prioridade_gut']);
-                                }
-                            },
-                            {
-								targets: 7,
+								targets: 6,
                                 visible: true,
                                 render: function(data, type, full, meta) {
                                     if (full['prioridade_gravidade'] == 1) {
@@ -412,7 +411,7 @@ $(document).ready(function() {
                                 }
                             },
                             {
-                                targets: 8,
+                                targets: 7,
                                 visible: true,
                                 render: function(data, type, full, meta) {
                                     if (full['prioridade_urgencia'] == 1) {
@@ -459,7 +458,7 @@ $(document).ready(function() {
                                 }
                             },
                             {
-                                targets: 9,
+                                targets: 8,
                                 visible: true,
                                 render: function(data, type, full, meta) {
                                     if (full['prioridade_tendencia'] == 1) {
@@ -504,12 +503,19 @@ $(document).ready(function() {
                                             '</select>';
                                     }
                                 }
+                            },
+                            {
+                                targets: 9,
+                                render: function(data, type, full, meta) {
+                                    return formatColumnText(full['prioridade_gut']);
+                                }
                             }
                         ]
                     });
                 } else {
                     console.log("O retorno não é um array válido:", requisitos);
                 }
+                $('#btn-fim').removeClass('d-none');
             },
             error: function(xhr, status, error) {
                 console.log("Erro na requisição AJAX: ", error);
